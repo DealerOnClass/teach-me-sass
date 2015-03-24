@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>reveal.js - The HTML Presentation Framework</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link href="http://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+    <div class="reveal">
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <section>
+                <section class="text-center">
+                    <h3>Intro to SASS</h3>
+                    <p><em>(Syntactically Awesome CSS)</em></p>
+                </section>
+                <section>
+                    <h3>What is SASS?</h3>                
+                    <div class="grid">
+                        <div class="col col--1-3">
+                            <p>Sass is <em>CSS with Superpowers</em>
+                            </p>
+                        </div>
+                        <div class="col col--2-3">
+                            <p class="fragment">It is a CSS preprocessor.</p>
+                            <ul>
+                                <li class="fragment">Been around for 8 years</li>
+                                <li class="fragment">Actively supported</li>
+                                <li class="fragment">Completely compatible with all versions of CSS</li>
+                                <li class="fragment">Made by Hampton Catlin, Natalie Weizenbaum, and Chris Eppstein</li>
+                            </ul>
+                            <p class="fragment">
+                                <a href="http://sass-lang.com/">http://sass-lang.com/</a>
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <section>
+                <section class="text-center">
+                    <h3>Features</h3>
+                    <p><em>The Cool Stuff</em></p>
+                </section>
+                <section>
+                    <h3>Cool Stuff</h3>
+                    <div class="grid">
+                        <div class="col col--1-3">
+                            <p class="fragment">Sass has <em>no original ideas.</em></p>
+                        </div>
+                        <div class="col col--2-3">
+                            <p class="fragment">Overview of features</p>
+                            <ul>
+                                <li class="fragment">Preprocessing</li>
+                                <li class="fragment">Variables</li>
+                                <li class="fragment">Nesting</li>
+                                <li class="fragment">Partials</li>
+                                <li class="fragment">Import</li>
+                                <li class="fragment">Mixin(functions)</li>
+                                <li class="fragment">Inheritance</li>
+                                <li class="fragment">Operators</li>
+                            </ul>
+                            <p class="fragment">
+                                <a href="http://sass-lang.com/guide">http://sass-lang.com/guide</a>
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3>Preprocessing</h3>
+                    <div class="grid">
+                        <div class="col col--1-3">
+                            <p>CSS is <em>complex</em></p>
+                        </div>
+                        <div class="col col--2-3">
+                            <p class="fragment">Using <strong>SCSS Partials</strong> we can separate large complex stylesheets into sane, modular pieces.</p>
+                            <div class="grid">
+                                <div class="col col--1-2 fragment">
+                                    <p><em>from this</em></p>
+                                    <ul class="list-unstyled code">
+                                        <li>stylesheet.css (250 lines)</li>
+                                    </ul>
+                                </div>
+                                <div class="col col--1-2 fragment">
+                                    <p><em>to this</em></p>
+                                    <ul class="list-unstyled code">
+                                        <li>_reset.scss (50 lines)</li>
+                                        <li>_utilities.scss (50 lines)</li>
+                                        <li>_typography.scss (50 lines)</li>
+                                        <li>_grid.scss (50 lines)</li>
+                                        <li>_nav.scss (25 lines)</li>
+                                        <li>_footer.scss (25 lines)</li>
+                                        <li>&hellip;etc</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="grid code fragment">
+                                <div class="col col--1-2">
+                                    <p>stylesheet.css</p>
+                                </div>
+                                <div class="col col--1-2">
+                                    <p>stylesheet.css</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3>Variables</h3>
+                    <div class="grid">
+                        <div class="col col--1-3">
+                            <p>It's <em>Reusable</em></p>
+                        </div>
+                        <div class="col col--2-3">
+                            <p class="fragment">Declare a variable once, reuse anywhere.</p>
+                            <pre class="fragment">
+                            <code>
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+    font: 100% $font-stack;
+    color: $primary-color;
+}
+                            </code>
+                            </pre>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3>Nesting</h3>
+                    <div class="grid">
+                        <div class="col col--1-3">
+                            <p>Clear <em>Visual Hierarchy</em></p>
+                        </div>
+                        <div class="col col--2-3">
+                            <p class="fragment">It's nested, get it.</p>
+                            <pre class="fragment"><code>
+nav {
+    li { display: inline-block; }
+}
+                            </code></pre>
+                            <pre class="fragment"><code>
+nav li { display: inline-block; }
+                            </code></pre>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3>Partials</h3>
+                    <div class="grid">
+                        <div class="col col--1-3">
+                            <p>Create <em>snippets of css</em><br>to include in other files</p>
+                        </div>
+                        <div class="col col--2-3">
+                            <p class="fragment">Looks like a CSS import</p>
+                            <div class="grid">
+                                <div class="col col--1-2 fragment">
+                                    <p><em>file structure</em></p>
+                                    <ul class="list-unstyled code">
+                                        <li>_reset.scss</li>
+                                        <li>_utilities.scss</li>
+                                        <li>_typography.scss</li>
+                                        <li>_grid.scss</li>
+                                        <li>_nav.scss</li>
+                                        <li>_footer.scss</li>
+                                        <li>&hellip;etc</li>
+                                    </ul>
+                                </div>
+                                <div class="col col--1-2 fragment">
+                                    <p><em>config file</em></p>
+                                    <pre><code>
+// config.scss
+@import 'reset';
+@import 'utilities';
+@import 'typography';
+                                    </code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3>Mixins(functions)</h3>
+                    <div class="grid">
+                        <div class="col col--1-3">
+                            <p>Functions &amp; Parameters</p>
+                        </div>
+                        <div class="col col--2-3">
+                            <pre class="fragment"><code>
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+.box { @include border-radius(10px); }
+                            </code></pre>
+                            <pre class="fragment"><code>
+.box {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    border-radius: 10px;
+}
+                            </code></pre>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3>Extend/Inheritance</h3>
+                    <div class="grid">
+                        <div class="col col--1-3">
+                            <p>Keep your SASS <em>DRY</em></p>
+                        </div>
+                        <div class="col col--2-3">
+                            <pre class="fragment"><code>
+.message {
+    border: 1px solid #ccc;
+    padding: 10px;
+    color: #333;
+}
+
+.success {
+    @extend .message;
+    border-color: green;
+}
+                            </code></pre>
+                            <pre class="fragment"><code>
+.message, .success {
+    border: 1px solid #cccccc;
+    padding: 10px;
+    color: #333;
+}
+
+.success {
+  border-color: green;
+}
+                            </code></pre>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3>Operators</h3>
+                    <div class="grid">
+                        <div class="col col--1-3">
+                            <p>Math <em>son!</em></p>
+                        </div>
+                        <div class="col col--2-3">
+                            <pre class="fragment"><code>
+.container { width: 100%; }
+
+article[role="main"] {
+    float: left;
+    width: 600px / 960px * 100%;
+}
+                            </code></pre>
+                            <pre class="fragment"><code>
+.container {
+    width: 100%;
+}
+
+article[role="main"] {
+    float: left;
+    width: 62.5%;
+}
+                            </code></pre>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <section>
+                <section class="text-center">
+                    <h3>Practical Examples</h3>
+                    <p><em>The Real World</em></p>
+                </section>
+                <section>
+                    <h3>Practical Example 1</h3>
+                    <div class="grid">
+                        <div class="col col--1-3">
+                            <p>Oh no!<br>Devito needs a <em>new cta button!</em></p>
+                        </div>
+                        <div class="col col--2-3">
+                            <pre class="fragment"><code>
+.new-cta {
+    background-color: #FF7B1A;
+    -webkit-transition: all ease-in-out .25s;
+       -moz-transition: all ease-in-out .25s;
+            transition: all ease-in-out .25s;
+}
+.new-cta:hover, .new-cta:active, .new-cta:focus {
+    background-color: #FF9B3A;
+}
+                            </code></pre>
+                            <pre class="fragment"><code>
+.new-cta {
+    background-color: $primary__color;
+    @include transition(all ease-in-out .25s);
+    &:hover, &:active, &:focus {
+        background-color: darken($primary__color, 10%);
+    }
+}
+                            </code></pre>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3>Practical Example 2</h3>
+                    <p>Oh no!<br>Devito needs a <em>new gradient!</em></p>
+                    <pre class="fragment"><code>
+.linear-gradient {
+    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuMCIgeDI9IjEuMCIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2RkZGRkZCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+    background-size: 100%;
+    background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0%, #ffffff), color-stop(100%, #dddddd));
+    background-image: -moz-linear-gradient(top, #ffffff, #dddddd);
+    background-image: -webkit-linear-gradient(top, #ffffff, #dddddd);
+    background-image: linear-gradient(to bottom right, #ffffff, #dddddd);
+}
+                    </code></pre>
+                    <pre class="fragment"><code>
+.linear-gradient {    
+    @include background-image(linear-gradient(to bottom right, white, #dddddd));
+}
+                    </code></pre>
+                </section>
+                <section>
+                    <h3>Practical Example 3</h3>
+                    <div class="grid">
+                        <div class="col col--1-3">
+                            <p>Oh no!<br><em>bloat code!</em></p>
+                        </div>
+                        <div class="col col--2-3">
+                            <p class="fragment">Commented out code doesn't compile.</p>
+                            <pre class="fragment"><code>
+// Components
+@import "bootstrap/dropdowns";
+// @import "bootstrap/navs";
+// @import "bootstrap/navbar";
+// @import "bootstrap/breadcrumbs";
+// @import "bootstrap/pagination";
+// @import "bootstrap/pager";
+                            </code></pre>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3>Practical Example 4</h3>
+                    <div class="grid">
+                        <div class="col col--1-3">
+                            <p>Oh no!<br><em>I made a mistake!</em></p>
+                        </div>
+                        <div class="col col--2-3">
+                            <div class="fragment">
+                            <p>You suck</p>
+                            <pre><code>
+a {
+    color: tomato
+    text-decoration: none;
+}
+                            </code></pre>
+                            </div>
+                            <div class="fragment">
+                            <p>SASS knows</p>
+                            <pre><code>
+Error: Invalid CSS after "    &": expected ";", was ":hover {"
+        on line 16 of C:/Users/alberto/Desktop/jekyll_yo/app/_scss/main.scss
+
+13: }
+14:
+15: a {
+16:     color: tomato
+17:     text-decoration: none;
+18: }
+                            </code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3>Practical Example 5</h3>
+                    <div class="grid">
+                        <div class="col col--1-3">
+                            <p>Oh no!<br><em>media queries!</em></p>
+                        </div>
+                        <div class="col col--2-3">
+                            <p class="fragment">So make a mixin.</p>
+                            <pre class="fragment"><code>
+@mixin media($type) {
+    @if $type == large-desktop {
+        @media only screen and (min-width: 1200px) {
+            @content;
+        }
+    }
+    @else if $type == desktop {
+        @media only screen and (max-width: 1199px) {
+            @content;
+        }
+    }
+}
+                            </code></pre>
+                            <pre class="fragment"><code>
+.desktop .chatBlock {
+    @include media(large-desktop) {
+        margin-top: 2em;
+    }
+}
+                            </code></pre>
+                        </div>
+                    </div>
+                </section>                
+            </section>
+            <section>
+                <section class="text-center">
+                    <h3>Excuses</h3>
+                    <p><em>Nagging Nancy</em></p>
+                </section>
+                <section>
+                    <h3>Excuse 1</h3>
+                    <div class="grid">
+                        <div class="col col--1-3">
+                            <p>But I don't know how to use the <em>command line</em></p>
+                        </div>
+                        <div class="col col--2-3">
+                            <p class="fragment">Suck it up.<br></p>
+                            <p class="fragment">cd to your directory and tell sass to watch for changes. Done.</p>
+                            <pre class="fragment"><code>
+cd C:\Users\yourName\root\styles\123
+
+sass --watch
+                            </code></pre>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3>Excuse 2</h3>
+                    <div class="grid">
+                        <div class="col col--1-3">
+                            <p>But I don't want to learn <em>new things</em></p>
+                        </div>
+                        <div class="col col--2-3">
+                            <p class="fragment">You work with the web&hellip;</p>
+                            <div class="fragment">
+                                <img src="img/facepalm.jpg" alt="Facepalm">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3>Excuse 3</h3>
+                    <div class="grid">
+                        <div class="col col--1-3">
+                            <p>But can we <em>really</em> benefit from efficiency?</p>
+                        </div>
+                        <div class="col col--2-3">
+                            <p class="fragment">Do you care about performance?&hellip;</p>
+                            <div class="fragment">
+                                <img src="img/unused.jpg" alt="Unused CSS">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3>Excuse 4</h3>
+                    <div class="grid">
+                        <div class="col col--1-3">
+                            <p>But we use <em>Bootstrap</em></p>
+                        </div>
+                        <div class="col col--2-3">
+                            <p class="fragment">Yup</p>
+                            <div class="fragment">
+                                <img src="img/bootstrap-sass.png" alt="Bootstrap Sass">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3>Excuse 5</h3>
+                    <div class="grid">
+                        <div class="col col--1-3">
+                            <p>But I'll need to install<br><em>all these things!?</em></p>
+                        </div>
+                        <div class="col col--2-3">
+                            <p class="fragment">Yup</p>
+                            <ol>
+                                <li class="fragment">Ruby</li>
+                                <li class="fragment">Ruby Gems</li>
+                                <li class="fragment">Python</li>
+                            </ol>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3>Excuse 6</h3>
+                    <div class="grid">
+                        <div class="col col--1-3">
+                            <p>But we have to convert our files to <em>SASS!</em></p>
+                        </div>
+                        <div class="col col--2-3">
+                            <p class="fragment">Yup</p>
+                            <p class="fragment">Change the file extension from .css to .scss</p>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3>Excuse 7</h3>
+                    <div class="grid">
+                        <div class="col col--1-3">
+                            <p>But <em>I use Dreamweaver!</em></p>
+                        </div>
+                        <div class="col col--2-3">
+                            <p class="fragment">Yup</p>
+                            <p class="fragment">Dreamweaver supports SASS as of last year.</p>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3>Excuse 8</h3>
+                    <div class="grid">
+                        <div class="col col--1-3">
+                            <p>But we have <em>a dev team and a platform!</em></p>
+                        </div>
+                        <div class="col col--2-3">
+                            <p class="fragment">Yup</p>
+                            <p class="fragment">MVC framework has a SASS compiler.</p>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3>Excuse 9</h3>
+                    <div class="grid">
+                        <div class="col col--1-3">
+                            <p>But there are other<br><em>CSS Preprocessors</em></p>
+                        </div>
+                        <div class="col col--2-3">
+                            <div class="grid">
+                                <div class="col col--1-2">
+                                    <p class="fragment">Yup</p>
+                                    <ul>
+                                        <li class="fragment">Sass</li>
+                                        <li class="fragment">Less</li>
+                                        <li class="fragment">Stylus</li>
+                                        <li class="fragment">CSS-Crush</li>
+                                        <li class="fragment">Myth</li>
+                                        <li class="fragment">Rework</li>
+                                    </ul>
+                                </div>
+                                <div class="col col--1-2">
+                                    <p class="fragment">Why SASS?</p>
+                                    <ol>
+                                        <li class="fragment">History(since '06)</li>
+                                        <li class="fragment">Community</li>
+                                        <li class="fragment">Logic Statements</li>
+                                        <li class="fragment">Existing frameworks</li>
+                                    </ol>
+                                    <p class="fragment">They all do a similar thing, some a little better than others.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'fade', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [{
+            src: 'lib/js/classList.js',
+            condition: function() {
+                return !document.body.classList;
+            }
+        }, {
+            src: 'plugin/markdown/marked.js',
+            condition: function() {
+                return !!document.querySelector('[data-markdown]');
+            }
+        }, {
+            src: 'plugin/markdown/markdown.js',
+            condition: function() {
+                return !!document.querySelector('[data-markdown]');
+            }
+        }, {
+            src: 'plugin/highlight/highlight.js',
+            async: true,
+            condition: function() {
+                return !!document.querySelector('pre code');
+            },
+            callback: function() {
+                hljs.initHighlightingOnLoad();
+            }
+        }, {
+            src: 'plugin/zoom-js/zoom.js',
+            async: true
+        }, {
+            src: 'plugin/notes/notes.js',
+            async: true
+        }]
+    });
+    </script>
+
+</body>
+
+</html>
