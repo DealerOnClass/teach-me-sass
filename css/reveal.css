@@ -1340,6 +1340,10 @@ body {
 /*********************************************
  * CUSTOM
  *********************************************/
+.reveal ol + pre {
+    margin-top: 1.3em;
+}
+
 .reveal .code, code {
     font-family: "Inconsolata", monospace;
 }
@@ -1356,32 +1360,37 @@ body {
     list-style-type: none;
 }
 
-.container {
+.reveal .container {
     max-width: 40em;
     margin: 0 auto;
 }
 
-.grid:after {
+.reveal .grid {
+    margin: 0 -.5em;
+}
+
+.reveal .grid:after {
     content: "";
     display: table;
     clear: both;
 }
 
-.col {
+.reveal .col {
     box-sizing: border-box;
+    padding: 0 .5em;
 }
 
 @media (min-width: 60em) {
-    .col {
+    .reveal .col {
         float: left;
     }
-    .col--1-3 {
+    .reveal .col--1-3 {
         width: 33.33333%;
     }
-    .col--1-2 {
+    .reveal .col--1-2 {
         width: 50%;
     }
-    .col--2-3 {
+    .reveal .col--2-3 {
         width: 66.66667%;
     }
 }

@@ -43,6 +43,9 @@
         <!-- Any section element inside of this container is displayed as a slide -->
         <div class="slides">
             <section>
+                <!--  -->
+                <!-- Intro to SASS -->
+                <!--  -->
                 <section class="text-center">
                     <h3>Intro to SASS</h3>
                     <p><em>(Syntactically Awesome CSS)</em></p>
@@ -70,6 +73,9 @@
                 </section>
             </section>
             <section>
+                <!--  -->
+                <!-- Features -->
+                <!--  -->
                 <section class="text-center">
                     <h3>Features</h3>
                     <p><em>The Cool Stuff</em></p>
@@ -303,6 +309,9 @@ article[role="main"] {
                 </section>
             </section>
             <section>
+                <!--  -->
+                <!-- Practical Examples -->
+                <!--  -->
                 <section class="text-center">
                     <h3>Practical Examples</h3>
                     <p><em>The Real World</em></p>
@@ -443,6 +452,9 @@ Error: Invalid CSS after "    &": expected ";", was ":hover {"
                 </section>                
             </section>
             <section>
+                <!--  -->
+                <!-- Excuses -->
+                <!--  -->
                 <section class="text-center">
                     <h3>Excuses</h3>
                     <p><em>Nagging Nancy</em></p>
@@ -588,6 +600,369 @@ sass --watch
                                     <p class="fragment">They all do a similar thing, some a little better than others.</p>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <section>
+                <!--  -->
+                <!-- Bootstrap Demo -->
+                <!--  -->
+                <section class="text-center">
+                    <h3>Compass</h3>
+                    <p><em>You're lost without it</em></p>
+                </section>
+                <section>
+                    <h3>SASS + Compass</h3>
+                    <div class="grid">
+                        <div class="col col--1-3">
+                            <p>Like <em>PB+J</em></p>
+                        </div>
+                        <div class="col col--2-3">
+                            <p class="fragment">Compass is an open-source CSS Authoring Framework.<br>
+                                <a href="http://compass-style.org/" target="_blank">http://compass-style.org/</a></p>
+                            <p class="fragment">Compass is a powerful set of mixins, functions, and basically SASS extensions.</p>
+                            <ol>
+                                <li class="fragment">Experience cleaner markup without presentational classes.</li>
+                                <li class="fragment">It’s chock full of the web’s best reusable patterns.</li>
+                                <li class="fragment">It makes creating sprites a breeze.</li>
+                                <li class="fragment">Compass mixins make CSS3 easy.</li>
+                                <li class="fragment">Create beautiful typographic rhythms.</li>
+                                <li class="fragment">Download and create extensions with ease.</li>
+                            </ol>
+                            <p class="fragment">
+                                <a href="http://compass-style.org/reference/compass/css3/" target="_blank">http://compass-style.org/reference/compass/css3/</a></p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <section>
+                <!--  -->
+                <!-- Bootstrap Demo -->
+                <!--  -->
+                <section class="text-center">
+                    <h3>Demo</h3>
+                    <p><em><a href="http://dealeronclass.github.io/rothbardsassy/" target="_blank">RothbardSassy</a></em></p>
+                </section>
+                <section>
+                    <h3>Installation 1</h3>
+                    <div class="grid">
+                        <div class="col col--1-3">
+                            <p>The daunting <em>setup!</em></p>
+                        </div>
+                        <div class="col col--2-3">
+                            <p class="fragment">Assuming Ruby, Ruby Gems, and Python are installed&hellip;</p>
+                            <ol>
+                                <li class="fragment">Open the command prompt</li>
+                                <li class="fragment">cd to your project folder</li>
+                                <li class="fragment">Install compass by typing:</li>
+                            </ol>
+                            <pre class="fragment"><code>
+compass create
+                            </code></pre>
+                            <p class="fragment">View your newly created project folder!<br><em>next slide</em></p>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3>Installation 2</h3>
+                    <div class="grid">
+                        <div class="col col--1-3">
+                            <p>Watch <em>this!</em></p>
+                        </div>
+                        <div class="col col--2-3">
+                            <p class="fragment">The previous command created this folder structure</p>
+                            <div class="grid">
+                                <div class="col col--1-2">
+                                    <pre class="fragment"><code>
+- yourProjectFolder
+    + .sass-cache
+    - sass
+        ie.scss
+        print.scss
+        screen.scss
+    - stylesheets
+        ie.css
+        print.css
+        screen.css
+      config.rb    
+                                    </code></pre>
+                                </div>
+                                <div class="col col--1-2">
+                                    <p class="fragment"><em>.sass-cache</em><br>similar to cache in browser.</p>
+                                    <p class="fragment"><em>sass</em><br>contains our source files, you'll be working with these.</p>
+                                    <p class="fragment"><em>stylesheets</em><br>is our output, link these to your html file.</p>
+                                    <p class="fragment"><em>config.rb</em><br>contains our SASS settings.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3>Installation 3</h3>
+                    <div class="grid">
+                        <div class="col col--1-3">
+                            <p>config.rb a <em>closer</em> look.</p>
+                        </div>
+                        <div class="col col--2-3">
+                            <p class="fragment">Your project settings(configuration)</p>
+                            <pre class="fragment"><code>
+require "compass/import-once/activate"
+# Require any additional compass plugins here.
+
+# Set this to the root of your project when deployed:
+http_path = "/"
+css_dir = "stylesheets"
+sass_dir = "sass"
+images_dir = "images"
+javascripts_dir = "javascripts"
+                            </code></pre>
+                            <p class="fragment">Cool! Now lets make some stuff!</p>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3>Installation 4</h3>
+                    <div class="grid">
+                        <div class="col col--1-3">
+                            <p>But wait <em>there's more.</em></p>
+                        </div>
+                        <div class="col col--2-3">
+                            <p class="fragment">What about Bootstrap? <a href="https://github.com/twbs/bootstrap-sass">Official Bootstrap SASS</a></p>                            
+                            <pre class="fragment"><code>
+# Get the gem (command line)                            
+gem install bootstrap-sass
+                            </code></pre>
+                            <pre class="fragment"><code>
+# Require the gem (config.rb)                          
+require 'bootstrap-sass'
+                            </code></pre>
+                            <pre class="fragment"><code>
+# Install the gem (command line)                      
+compass install bootstrap-sass -r bootstrap-sass
+                            </code></pre>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3>Installation 5</h3>
+                    <div class="grid">
+                        <div class="col col--1-3">
+                            <p>Lets see the <em>updates</em></p>
+                        </div>
+                        <div class="col col--2-3">
+                            <div class="grid">
+                                <div class="col col--1-2">
+                                    <p class="fragment"><em>before</em></p>
+                                    <pre class="fragment"><code>
+- yourProjectFolder
+    + .sass-cache
+    - sass
+        ie.scss
+        print.scss
+        screen.scss
+    - stylesheets
+        ie.css
+        print.css
+        screen.css
+      config.rb    
+                                    </code></pre>
+                                </div>
+                                <div class="col col--1-2">
+                                    <p class="fragment"><em>after</em></p>
+                                    <pre class="fragment"><code>
+- yourProjectFolder
+    + .sass-cache
+    + fonts
+    + javascripts
+    - sass
+        _bootstrap-variables.scss
+        ie.scss
+        print.scss
+        screen.scss
+        styles.scss
+    - stylesheets
+        ie.css
+        print.css
+        screen.css
+        styles.css
+      config.rb    
+                                    </code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3>Installation 6</h3>
+                    <div class="grid">
+                        <div class="col col--1-3">
+                            <p>Lets remove a few things we don't need, now we've got this&hellip;</p>
+                        </div>
+                        <div class="col col--2-3">
+                            <div class="grid">
+                                <div class="col col--1-2">
+                                    <p class="fragment"><em>before</em></p>
+                                    <pre class="fragment"><code>
+- yourProjectFolder
+    + .sass-cache
+    + fonts
+    + javascripts
+    - sass
+        _bootstrap-variables.scss
+        ie.scss
+        print.scss
+        screen.scss
+        styles.scss
+    - stylesheets
+        ie.css
+        print.css
+        screen.css
+        styles.css
+      config.rb    
+                                    </code></pre>
+                                </div>
+                                <div class="col col--1-2">
+                                    <p class="fragment"><em>after</em></p>
+                                    <pre class="fragment"><code>
+- yourProjectFolder
+    + .sass-cache
+    + fonts
+    + javascripts
+    - sass
+        _bootstrap-variables.scss
+        styles.scss
+    - stylesheets
+        styles.css
+      config.rb    
+                                    </code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3>Installation 7</h3>
+                    <div class="grid">
+                        <div class="col col--1-3">
+                            <p>styles.scss <em>customization</em></p>
+                        </div>
+                        <div class="col col--2-3">
+                            <pre class="fragment"><code>
+// Import Bootstrap Compass integration
+@import "bootstrap-compass";
+
+// Import custom Bootstrap variables
+@import "bootstrap-variables";
+
+// Import Bootstrap for Sass
+@import "bootstrap";
+                            </code></pre>
+                            <p class="fragment">Lets add some control&hellip;</p>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3>Installation 8</h3>
+                    <div class="grid">
+                        <div class="col col--1-3">
+                            <p>Bootstrap <em>customization</em></p>
+                        </div>
+                        <div class="col col--2-3">
+                            <p class="fragment"><a href="https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/_bootstrap.scss">Add this to your project.</a></p>
+                            <p class="fragment">Replace</p>
+                            <pre class="fragment"><code>
+// Import Bootstrap for Sass
+@import "bootstrap";
+                            </code></pre>
+                            <p class="fragment">With</p>
+                            <pre class="fragment"><code>
+// Import Bootstrap for Sass
+@import 'bootstrap-custom';
+                            </code></pre>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3>Installation 9</h3>
+                    <div class="grid">
+                        <div class="col col--1-3">
+                            <p>
+                                Full <em>power!</em>
+                            </p>
+                        </div>
+                        <div class="col col--2-3">
+                            <p class="fragment">Now we've got totall control.</p>
+                            <pre class="fragment"><code>
+// Core variables and mixins
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+
+// Reset and dependencies
+@import "bootstrap/normalize";
+@import "bootstrap/print";
+@import "bootstrap/glyphicons";
+
+// Core CSS
+@import "bootstrap/scaffolding";
+@import "bootstrap/type";
+@import "bootstrap/code";
+@import "bootstrap/grid";
+@import "bootstrap/tables";
+@import "bootstrap/forms";
+@import "bootstrap/buttons";
+
+// Components
+@import "bootstrap/component-animations";
+@import "bootstrap/dropdowns";
+@import "bootstrap/button-groups";
+@import "bootstrap/input-groups";
+@import "bootstrap/navs";
+@import "bootstrap/navbar";
+@import "bootstrap/breadcrumbs";
+@import "bootstrap/pagination";
+@import "bootstrap/pager";
+@import "bootstrap/labels";
+@import "bootstrap/badges";
+@import "bootstrap/jumbotron";
+@import "bootstrap/thumbnails";
+@import "bootstrap/alerts";
+@import "bootstrap/progress-bars";
+@import "bootstrap/media";
+@import "bootstrap/list-group";
+@import "bootstrap/panels";
+@import "bootstrap/responsive-embed";
+@import "bootstrap/wells";
+@import "bootstrap/close";
+
+// Components w/ JavaScript
+@import "bootstrap/modals";
+@import "bootstrap/tooltip";
+@import "bootstrap/popovers";
+@import "bootstrap/carousel";
+
+// Utility classes
+@import "bootstrap/utilities";
+@import "bootstrap/responsive-utilities";                                
+                            </code></pre>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3>Installation 10</h3>
+                    <div class="grid">
+                        <div class="col col--1-3">
+                            <p>This <em>means?</em></p>
+                        </div>
+                        <div class="col col--2-3">
+                            <p class="fragment">We can now easily&hellip;</p>
+                            <ol>
+                                <li class="fragment">Use Compass and Bootstrap</li>
+                                <li class="fragment">Declare our own variables for every bootstrap component.</li>
+                                <li class="fragment">Determine which components are used.</li>
+                                <li class="fragment">Smack Bootstrap <em>in the face!</em></li>
+                            </ol>
+                            <p class="fragment">But that's not all. <em><a href="https://github.com/DealerOnClass/rothbardsassy" target="_blank">Demo time.</a></em></p>
                         </div>
                     </div>
                 </section>
