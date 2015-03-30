@@ -1340,7 +1340,7 @@ body {
 /*********************************************
  * CUSTOM
  *********************************************/
-.reveal ol + pre {
+.reveal ol + pre, .reveal pre + ol {
     margin-top: 1.3em;
 }
 
@@ -1397,4 +1397,5 @@ body {
 
 .reveal .unused-css {
     color: #DC3522;
+    font-weight: 700;
 }
